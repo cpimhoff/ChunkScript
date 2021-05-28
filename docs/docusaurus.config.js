@@ -2,7 +2,7 @@
 module.exports = {
   title: "ChunkScript",
   tagline: "The first programming language for pro coders only",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://chunkscript.cpimhoff.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -38,8 +38,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/cpimhoff/ChunkScript/edit/master/docs/docs/",
+          editUrl: "https://github.com/cpimhoff/ChunkScript/edit/master/docs/",
         },
         blog: {
           path: "proposals",
@@ -47,8 +46,7 @@ module.exports = {
           blogTitle: "ChunkScript Evolution Proposals",
           blogSidebarTitle: "All Proposals",
           showReadingTime: false,
-          editUrl:
-            "https://github.com/cpimhoff/ChunkScript/edit/master/docs/blog/",
+          editUrl: "https://github.com/cpimhoff/ChunkScript/edit/master/docs/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
