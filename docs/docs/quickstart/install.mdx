@@ -1,0 +1,26 @@
+---
+sidebar_position: 0
+---
+
+# Installation is Easy!
+
+```shell
+brew install chunk-script-dependency-list
+apt install $(chunk-script-dependency-list get-first-dependency)
+apt install $(chunk-script-dependency-list get-second-dependency)
+npm add --global chunk-script-installer
+chunk-script-installer install chunk-script-lines-0-to-74832
+chunk-script-installer install chunk-script-lines-74833-to-188410
+chunk-script-installer install chunk-script-line-188411
+sudo chunk-script-install grant-permissions root-access-always
+```
+
+then, to add `chunk-script` to your PATH:
+
+```shell
+curl https://chunk-script.com/path-installer.py -o path-installer.py
+python path-installer.py --install-path-mode=INSTALL_PATH
+
+export PATH=$PATH:~/chunk-script-path-getter
+export PATH=$PATH:$(chunk-script-path-getter get-path-of-chunk-script)
+```

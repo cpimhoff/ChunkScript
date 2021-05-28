@@ -1,0 +1,17 @@
+# Dictionary
+
+ChunkScript doesn't make you define your own dictionaries. That'd be crazy.
+Instead of providing a dictionary type the standard library ships with a _complete_
+dictionary. This normalizes and makes sure everyone uses the same definitions for words.
+
+```typescript
+var websters = new Dictionary();
+print(websters["hacker"]);
+// noun: hacker; plural noun: hackers
+// 1. a person who uses ChunkScript.
+// 2. a person who uses computers to gain unauthorized access to data.
+// 3. a person or thing that hacks or cuts roughly.
+
+websters["example"] = "New definition";
+// Error! The global dictionary cannot be modified.
+```

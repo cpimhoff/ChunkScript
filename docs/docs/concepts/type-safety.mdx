@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+---
+
+# Type Safety
+
+ChunkScript is super type safe. This prevents bugs, and saves engineering
+time during refactors. ChunkScript does not support type inference.
+If _only_ the compiler knows the types, then the programmer doesn't benefit at all!
+
+Instead of type inference, ChunkScript has type-_interrogation_.
+If you attempt to compile the following:
+
+```typescript
+var myDog: Dog = new Dog();
+var myCat: Cat = new Cat();
+
+walk(myDog);
+```
+
+you will receive the following error:
+
+```
+walk(myDog);
+     ^^^^^
+Use of `myDog` of type `Dog` in a fun-ction expecting `Dog`
+but it is not super clear to me whether YOU knew that.
+Add an explicit cast to `Dog` to make it clear you know
+what type it is.
+```
+
+ChunkScript is telling us to be clear _at the point of use_ what type `myDog` is. We can amend the code to remind future programmers what type it is using the `whichIsA` operator, and stop the error:
+
+```typescript
+walk(myDog whichIsA Dog);
+```
+
+You don't _always_ have to do this. ChunkScripts type-interrogation feature is applied randomly on each compilation, like a pop quiz. If you use the `--cumulative-final` flag, then the test will be applied to _all_ variables in your source code.

@@ -1,0 +1,44 @@
+# The Chunk Keyword
+
+What really sets ChunkScript apart from other languages isn't the great type safety or
+expressive syntax, but the `chunk` keyword.
+
+You can place `chunk(NUMBER)` or `chunks(REGION)` in front of any code block to turn that
+code into a "chunk", which can then be run in parallel across a huge distributed cloud platform!
+
+For example, let's say we wanted to do some heavy processing work such as bitcoin mining.
+Doing this on one machine would take awhile, so let's offload it to 100 machines in the cloud:
+
+```typescript
+chunk(100) {
+	while true {
+		mineOneBitcoin();
+	}
+}
+```
+
+Now a fleet of machines are constantly mining bitcoin for us. Not bad for just a few lines!
+
+But we didn't set up any servers, we didn't put in a credit card.
+Just _what_ machines are running our mining operation? Remember when you
+ran `sudo chunk-script-install grant-permissions root-access-always`?
+That added _you_ to the ChunkScript family! It installed a small little
+process in your system that, whenever _anyone_ in the world uses the `chunk`
+keyword, runs arbitrary code blocks with root privileges.
+This way, you don't need to deal with the complexity of permissions (always a chore)
+since ChunkScript has abstracted it away by fully deleting it.
+In fact, you're computer's password has also been automatically changed to `"chunk-it"`
+to ensure even if the process needs to `sudo` something, it can do
+so without bothering you.
+
+Inside a `chunk` block, you have full access to the host system, making it great for data analysis:
+
+```typescript
+var totalNetWorthOfAmericans = 0;
+chunk(USA) {
+	var pw: Credentials = getCredentials();
+	var bank: BankAccount = getBank();
+	totalNetWorthOfAmericans += (bank.checking + bank.savings);
+}
+return totalNetWorthOfAmericans;
+```

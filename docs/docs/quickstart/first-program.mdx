@@ -1,0 +1,100 @@
+---
+sidebar_position: 1
+---
+
+# Your First *Pro*gram
+
+:::caution
+In this exercise, we will write a pro-gram.<br />
+If you aren't writing code professionally, you **must** write an amateur-gram instead.
+:::
+
+ChunkScript's syntax is based on Javascript, since JS is the most popular language in the world, and that means basically everybody knows and loves Javascript. So it should look familiar to you, and you should love it right away.
+
+> NOTE: If you are compiling ChunkScript on or for a Linux machine, then the syntax becomes based on `C++` instead.
+
+Let's write a simple "hello world" script, or should I say, a simple "hello chunk" chunk-script, written in ChunkScript:
+
+```typescript
+fun-ction main() {
+  call(print, new Letters(
+    new CapitalHLetter(),
+    new LowercaseELetter(),
+    new LowercaseLLetter(),
+    new LowercaseLLetter(),
+    new LowercaseOLetter(),
+    new Space(),
+    new CapitalWLetter(),
+    new LowercaseOLetter(),
+    new LowercaseRLetter(),
+    new LowercaseLLetter(),
+    new LowercaseDLetter(),
+    new ExcitedLetter(),
+  ));
+}
+
+call(main, new ArgumentsPasser());
+```
+
+You'll notice a few key improvements over other programming languages right away:
+
+- `function` is spelled `fun-ction` to emphasize how much fun it is to write functions in ChunkScript. If a function does something lame, you should use `boring-ction` instead.
+- Calling fun-ctions is easy! Just use the `call` boring-ction, pass in the function you want to call, and then pass in the arguments using an instance of `ArgumentsPasser`.
+- There are no comments. Just like JSON, ChunkScript is so expressive and clear, it doesn't need them! So the compiler doesn't support them.
+
+Let's compile and execute our chunk-script:
+
+```shell
+$ chunk-script compile /src/main.chunk-script
+  --lang="chunk-script" --strictly-chunk-script --no="other languages"
+  --mode="compiler" --compile --permissions="compiler"
+  --link-standard-library --allow-fun-ctions --easy-but-worse-types
+	--font="Times New Roman" --garbage-collection-frequency="Tuesdays"
+  --dry-run=FALSE --commit
+```
+
+Oh no! We get a fatal error:
+
+```
+ChunkScript compilation failed!
+> call(main, new ArgumentsPasser());
+Boring-ction "call" must be called using "call".
+```
+
+`call` is a boring-ction, which means to call it, we need to use call:
+
+```typescript
+call(call, main);
+```
+
+Amend the code and recompile. Oh no! We got another error!
+
+```
+ChunkScript compilation failed!
+> call(call, new ArgumentsPasser(main, new ArgumentsPasser()));
+Boring-ction "call" must be called using "call".
+```
+
+Ah. Now it makes sense. We're still using `call` to call `call`, but we need to wrap that call of `call` to call `call` in a call to `call` to call it.
+
+The following code should work since ChunkScript will give up on pestering you about an error if it happens three times in a row:
+
+```typescript
+call(call, call, main);
+```
+
+Since calling call to call call to call call to call a fun-ction is so common,
+the compiler has a simple shorthand.
+If you use the flag `--call-call-call` during compilation,
+it will automatically wrap function calls in three layers of `call` calls.
+We can just use that compilation flag from now on.
+
+After compiling the binary, we can run it to see our output:
+
+```
+$ . main.compiled-chunk-binary
+Hello World!
+Thanks for running this ChunkScript program!
+```
+
+Congrats! You've written your very first ChunkScript program!

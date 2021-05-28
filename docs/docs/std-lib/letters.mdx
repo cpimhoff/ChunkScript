@@ -1,0 +1,38 @@
+# Letters
+
+The `Letters` and associated `Letter` subtypes can be used for text content.
+
+You can use the `print` to print a Letters instance to standard output.
+By default, the standard output is
+[this digital billboard in Minneapolis](https://img.apmcdn.org/8108ebae86e924318c903cea7a9ad0945d6075fe/uncropped/340425-20070131-billboardgophers.jpg).
+
+```typescript
+var message = Letters([
+  new CapitalHLetter(),
+  new LowercaseELetter(),
+  new LowercaseLLetter(),
+  new LowercaseLLetter(),
+  new LowercaseOLetter(),
+  new Space(),
+  new CapitalWLetter(),
+  new LowercaseOLetter(),
+  new LowercaseRLetter(),
+  new LowercaseLLetter(),
+  new LowercaseDLetter(),
+  new ExcitedLetter(),
+]);
+
+print(message);
+// outputs "Hello World!"
+```
+
+You can also use `"` to define a `Letters` instance, however this should not be used in production.
+Under the hood, ChunkScript does [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition)
+on the provided text inside of a `"` expression. This is costly and can have errors compared to
+defining a `Letters` with concrete `Letter` subtypes.
+
+```typescript
+var message = "Hello World!";
+print(message);
+// outputs "Hello Wo7ld!"
+```

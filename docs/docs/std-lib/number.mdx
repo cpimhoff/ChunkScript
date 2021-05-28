@@ -1,0 +1,25 @@
+# Number
+
+ChunkScript's standard library is intentionally small so that ChunkScript
+compiles binaries which are tiny (and thus fast!). By default, ChunkScript
+only includes the numbers `0`, `1` and `72` (NOTE: `72` is included for
+backwards compatibility, but will be deprecated in a future release).
+
+ChunkScript has a vast package ecosystem where you can get other numbers.
+Check out these great third party dependencies:
+
+- `chunk-pos-even-numbers` allows you to import and use positive even numbers
+- `chunk-seven` allows you to import and use `7`
+- `chunk-big-but-not-excessively-so-numbers` allows you to import and use numbers greater than 2 million but smaller than 85 billion
+
+If you conduct math on two numbers you have imported,
+and the result is a number your code doesn't have access to,
+it will raise an `ImportError`:
+
+```typescript
+import { 1 } from "chunk-script-std-lib";
+import { seven } from "chunk-seven";
+
+var result = 1 + seven;
+// ImportError: 'Eight' type is not defined
+```

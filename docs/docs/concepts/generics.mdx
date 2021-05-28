@@ -1,0 +1,43 @@
+---
+sidebar_position: 2
+---
+
+# Generics
+
+ChunkScript has robust support for generics.
+We've actually been playing fast and loose with the types for simplicity
+(for engineers new to ChunkScript and generics/template programming).
+Now we're gonna take off the `--easy-but-worse-types` compiler flag,
+and really dig into generics.
+
+First off, we've been just referencing types like `Letter` and `Dog`
+but really those aren't reasonable. Let's zoom in on `Dog`:
+
+```typescript
+var myDog: Dog = new Dog();
+```
+
+A dog isn't a type of data we can put in our system; we can't squeeze a
+Labrador Retriever into a stack frame (if we tried we'd get a runtime error).
+
+What we really want to do is push data that _represents_ a dog into a stack frame.
+We call these representations "objects". `Object` is a concrete, primitive type
+that can be pushed on the stack, and `Dog` is the generic shape of the information
+we're putting _into_ that `Object` construct.
+
+We can express this as `Object<Dog>`:
+
+```typescript
+var myDogObject: Object<Dog> = new Object<Dog>(new Dog());
+```
+
+and then we can pass it to our `walk` fun-ction using a generic `ArgumentsPasser`:
+
+```typescript
+walk(new Object<ArgumentsPasser<Object<Dog>>>(
+	new ArgumentsPasser<Object<Dog>>(myDog whichisa Object<Dog>)
+	) whichias Object<ArgumentsPasser<Object<Dog>>>
+);
+```
+
+This may _seem_ to be a lot of needless boilerplate, but it isn't.
