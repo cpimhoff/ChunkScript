@@ -31,21 +31,6 @@ module.exports = {
         },
       ],
     },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Getting Started",
-              to: "/docs/installation/easy-install",
-            },
-          ],
-        },
-      ],
-      copyright: `ChunkScript is licensed under the MIT license.`,
-    },
   },
   presets: [
     [
