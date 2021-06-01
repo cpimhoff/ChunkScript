@@ -33,13 +33,13 @@ fun-ction main() {
   ));
 }
 
-call(main, new ArgumentsPasser());
+call(main, new NoArguments());
 ```
 
 You'll notice a few key improvements over other programming languages right away:
 
 - `function` is spelled `fun-ction` to emphasize how much fun it is to write functions in ChunkScript. If a function does something lame, you should use `boring-ction` instead.
-- Calling fun-ctions is easy! Just use the `call` boring-ction, pass in the function you want to call, and then pass in the arguments using an instance of `ArgumentsPasser`.
+- Calling fun-ctions is easy! Just use the `call` boring-ction, pass in the function you want to call. If there are no arguments to pass, then just use an instance of `NoArguments`.
 - There are no comments. Just like JSON, ChunkScript is so expressive and clear, it doesn't need them! So the compiler doesn't support them.
 
 Let's compile and execute our chunk-script:
@@ -71,7 +71,7 @@ Amend the code and recompile. Oh no! We got another error!
 
 ```
 ChunkScript compilation failed!
-> call(call, new ArgumentsPasser(main, new ArgumentsPasser()));
+> call(call, main);
 Boring-ction "call" must be called using "call".
 ```
 
