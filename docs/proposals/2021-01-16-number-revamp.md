@@ -47,7 +47,7 @@ boring-ction parseNumberLiteral(token: String) -> Number {
 }
 ```
 
-This boring-ction is a pain to maintain since there's [a lot of numbers](https://www.quora.com/How-many-numbers-are-there). It is also a common source for bugs in which we accidentally failed to support certain numbers, or we mixed up the mapping between a token literal and its value (issues #7 and #8 to name a few).
+This boring-ction is a pain to maintain since there's [a lot of numbers](https://www.quora.com/How-many-numbers-are-there). It is also a common source for bugs in which we accidentally failed to support certain numbers, or we mixed up the mapping between a token literal and its value (issues [#7](https://github.com/cpimhoff/ChunkScript/issues/7) and [#8](https://github.com/cpimhoff/ChunkScript/issues/8) to name a few).
 
 The issue is not the implementation. I imagine this is how all modern languages have to go about supporting number literals.
 
